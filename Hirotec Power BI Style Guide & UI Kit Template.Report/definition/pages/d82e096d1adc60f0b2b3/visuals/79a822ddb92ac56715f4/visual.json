@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "79a822ddb92ac56715f4",
+  "position": {
+    "x": 46.257396335135354,
+    "y": 116.6632160110421,
+    "z": 1000,
+    "height": 87.241632580046257,
+    "width": 523.884080545472,
+    "tabOrder": 6000
+  },
+  "visualGroup": {
+    "displayName": "Report Header",
+    "groupMode": "ScaleMode"
+  },
+  "parentGroupName": "9dcefd96804493887ffb"
+}

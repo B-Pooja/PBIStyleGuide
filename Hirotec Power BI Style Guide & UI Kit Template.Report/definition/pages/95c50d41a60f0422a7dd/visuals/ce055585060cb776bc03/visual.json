@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "ce055585060cb776bc03",
+  "position": {
+    "x": 93.28358208955224,
+    "y": 1378.731343283582,
+    "z": 3000,
+    "height": 67.164179104477611,
+    "width": 473.88059701492534,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "https://www.flaticon.com/",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "28pt"
+                    },
+                    "url": "https://www.flaticon.com/"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "lockAspect": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,40 @@
+table 'KPI Definitions'
+	lineageTag: 868b5ff2-5d10-4d9d-aeb9-a461949e8c0a
+
+	column 'Measure Name'
+		lineageTag: 7d8f6df5-5eaa-4651-8655-52519695203e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Measure Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		lineageTag: a82df6a6-09c6-40ea-b8bd-ff521be3ece0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Description]
+
+		annotation SummarizationSetBy = Automatic
+
+	column DAX
+		lineageTag: 243f8ff2-7d8c-4eca-b697-c3003c86aa5b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [DAX]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'KPI Definitions' = calculated
+		mode: import
+		source =
+				
+				SELECTCOLUMNS(
+				    INFO.VIEW.MEASURES(),
+				    "Measure Name", [Name],
+				    "Description", [Description],
+				    "DAX", [Expression]
+				)
+
+	annotation PBI_Id = 8ed5c33619c7407885f8a2e920f0f850
+

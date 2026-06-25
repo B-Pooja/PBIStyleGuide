@@ -1,0 +1,52 @@
+table AdventureWorks_Returns
+	lineageTag: a70a939a-9589-431d-aa13-100092af6510
+
+	column ReturnDate
+		dataType: string
+		lineageTag: f7ede2b1-37f0-48a7-af0c-b44ff8f95511
+		summarizeBy: none
+		sourceColumn: ReturnDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column TerritoryKey
+		dataType: int64
+		formatString: 0
+		lineageTag: a61b557e-ad35-4a65-b50c-a3fff4cc3e07
+		summarizeBy: count
+		sourceColumn: TerritoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 11940f89-8115-4696-9049-ed229d357c46
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReturnQuantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 831a7f09-9fc0-42d1-a223-d5f78e5bf4c7
+		summarizeBy: sum
+		sourceColumn: ReturnQuantity
+
+		annotation SummarizationSetBy = Automatic
+
+	partition AdventureWorks_Returns = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents("https://techstarconsultinginc.sharepoint.com/sites/HirotecMexico/Shared Documents/Hirotec - PowerBI Governance Project/Deliverables/Style Guide Dataset/AdventureWorks_Returns.csv"),[Delimiter=",", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"ReturnDate", type text}, {"TerritoryKey", Int64.Type}, {"ProductKey", Int64.Type}, {"ReturnQuantity", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

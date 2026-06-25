@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Hirotec Power BI Style Guide & UI Kit Template"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ae724bbb-2131-4f57-866c-0ce39a405209"
+  }
+}

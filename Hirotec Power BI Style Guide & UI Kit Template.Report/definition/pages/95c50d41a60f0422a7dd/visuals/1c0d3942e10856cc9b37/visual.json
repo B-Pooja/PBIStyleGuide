@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "1c0d3942e10856cc9b37",
+  "position": {
+    "x": 50,
+    "y": 1301.1111111111111,
+    "z": 2000,
+    "height": 165.55555555555554,
+    "width": 1177.7777777777778,
+    "tabOrder": 6000
+  },
+  "visualGroup": {
+    "displayName": "LInks ",
+    "groupMode": "ScaleMode"
+  }
+}

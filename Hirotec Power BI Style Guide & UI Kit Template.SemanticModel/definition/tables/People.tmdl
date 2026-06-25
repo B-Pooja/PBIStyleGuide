@@ -1,0 +1,33 @@
+table People
+	lineageTag: a860d938-c72f-4e85-bc72-5595211cfd9b
+
+	column Person
+		dataType: string
+		lineageTag: 7797a137-c336-4554-8307-445cf9e4abc5
+		summarizeBy: none
+		sourceColumn: Person
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 127ba23a-7aa3-4b77-a575-7a2244ab5875
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	partition People = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents("https://techstarconsultinginc.sharepoint.com/sites/HirotecMexico/Shared Documents/Hirotec - PowerBI Governance Project/Deliverables/Style Guide Dataset/People.csv"),[Delimiter=","]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Person", type text}, {"Region", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

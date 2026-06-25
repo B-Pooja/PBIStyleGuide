@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "c92a99c2135377ace867",
+  "position": {
+    "x": 643.8946031298,
+    "y": 384.35518893216033,
+    "z": 0,
+    "height": 308.57792659043531,
+    "width": 617.15585318087062,
+    "tabOrder": 1000
+  },
+  "visualGroup": {
+    "displayName": "Date Slicer 2",
+    "groupMode": "ScaleMode"
+  }
+}

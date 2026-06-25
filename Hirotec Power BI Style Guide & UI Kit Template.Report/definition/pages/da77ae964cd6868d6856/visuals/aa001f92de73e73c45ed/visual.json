@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "aa001f92de73e73c45ed",
+  "position": {
+    "x": 961.27555551075238,
+    "y": 84.712331789303192,
+    "z": 4000,
+    "height": 290,
+    "width": 300,
+    "tabOrder": 4000
+  },
+  "visualGroup": {
+    "displayName": "Tile slicer",
+    "groupMode": "ScaleMode",
+    "objects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

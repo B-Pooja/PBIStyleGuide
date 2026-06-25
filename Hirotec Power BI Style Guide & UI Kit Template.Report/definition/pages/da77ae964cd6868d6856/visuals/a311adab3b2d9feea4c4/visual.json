@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "a311adab3b2d9feea4c4",
+  "position": {
+    "x": 645.39636512492064,
+    "y": 84.65066196008118,
+    "z": 3000,
+    "height": 289.8418722327641,
+    "width": 289.8418722327641,
+    "tabOrder": 8000
+  },
+  "visualGroup": {
+    "displayName": "Vertical list slicer",
+    "groupMode": "ScaleMode"
+  }
+}

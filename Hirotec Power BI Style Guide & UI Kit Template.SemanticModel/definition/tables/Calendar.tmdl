@@ -1,0 +1,105 @@
+table Calendar
+	lineageTag: d83a7a5f-b89c-4b8e-990c-d2b3c402583c
+
+	column Date
+		formatString: General Date
+		lineageTag: 8cf8066f-63e0-4ca2-9006-800d71bada4b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: f6090377-0258-4fde-b56d-ae399d31ea6e
+			defaultHierarchy: LocalDateTable_852536b7-c274-4530-8148-23d7e91c4ce3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		formatString: 0
+		lineageTag: 3787e67a-9920-4ef1-96be-7196f151d7d9
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month No'
+		formatString: 0
+		lineageTag: 422956f2-0a1f-419b-aad8-52e089e548a6
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Month No]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Name'
+		lineageTag: 763249bc-8151-4150-84e0-37872a3374c9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		lineageTag: 415045e4-aeb8-4c78-af87-765aacbe38b9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Quarter]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day Name'
+		lineageTag: 032046c5-e28b-49de-80af-f0f32ef03fe3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Day Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Weekday No'
+		formatString: 0
+		lineageTag: 635d029e-4569-418f-a9b0-f1bedfe4f04d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Weekday No]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Datekey
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: d861f3f7-520d-4532-bfb1-9355df64d011
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Datekey]
+
+		variation Variation
+			isDefault
+			relationship: 2fe288bf-36f5-4a6c-838a-9f149bfdf33c
+			defaultHierarchy: LocalDateTable_4942c080-7051-451a-a6a3-a5524b4716ae.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition Calendar = calculated
+		mode: import
+		source =
+				
+				ADDCOLUMNS(
+				    CALENDAR(
+				        DATE(2010, 1, 1),
+				        DATE(2020, 12, 31)
+				    ),
+				    "Year", YEAR([Date]),
+				    "Datekey", FORMAT([Date], "MM/DD/YYYY"),
+				    "Month No", MONTH([Date]),
+				    "Month Name", FORMAT([Date], "MMM"),
+				    "Quarter", "Q" & FORMAT([Date], "Q"),
+				    "Day Name", FORMAT([Date], "DDD"),
+				    "Weekday No", WEEKDAY([Date], 2)
+				)
+
+	annotation PBI_Id = 4cc7b90459224c4481d70b84cba7fde4
+

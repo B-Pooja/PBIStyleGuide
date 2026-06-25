@@ -1,0 +1,43 @@
+table AdventureWorks_Product_Subcategories
+	lineageTag: 66e059c7-6c4f-4d5c-87ef-b4bdd0b1bc40
+
+	column ProductSubcategoryKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 9a4727de-cc9b-4176-babf-fa135e3677e6
+		summarizeBy: none
+		sourceColumn: ProductSubcategoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubcategoryName
+		dataType: string
+		lineageTag: 422897b1-c081-41aa-a955-353b530e8c8f
+		summarizeBy: none
+		sourceColumn: SubcategoryName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductCategoryKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 22c80ece-ce08-45ca-9ae9-876877466c46
+		summarizeBy: none
+		sourceColumn: ProductCategoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition AdventureWorks_Product_Subcategories = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents("https://techstarconsultinginc.sharepoint.com/sites/HirotecMexico/Shared Documents/Hirotec - PowerBI Governance Project/Deliverables/Style Guide Dataset/AdventureWorks_Product_Subcategories.csv"),[Delimiter=",", Columns=3, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"ProductSubcategoryKey", Int64.Type}, {"SubcategoryName", type text}, {"ProductCategoryKey", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

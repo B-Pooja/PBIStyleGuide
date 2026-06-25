@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "642b1612748834400103",
+  "position": {
+    "x": 25.555555555555554,
+    "y": 80,
+    "z": 2000,
+    "height": 181.11111111111111,
+    "width": 264.44444444444446,
+    "tabOrder": 6000
+  },
+  "visualGroup": {
+    "displayName": "Colors",
+    "groupMode": "ScaleMode",
+    "objects": {
+      "lockAspect": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

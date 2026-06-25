@@ -1,0 +1,104 @@
+table AdventureWorks_Sales_2015
+	lineageTag: d4fab313-0e2d-473c-8513-e5c8bc86c5a4
+
+	/// The total number of unique orders placed, calculated by counting distinct order numbers in the dataset.
+	measure 'Total Orders' = DISTINCTCOUNT(AdventureWorks_Sales_2015[OrderNumber])
+		formatString: 0
+		lineageTag: 6c7842a3-cc35-4edf-b7c4-38cb732b7d9e
+
+	/// The ratio of total order records to the number of unique orders, indicating how frequently orders are duplicated in the dataset—often used as a proxy to analyze returns or multiple entries per order.
+	measure 'Return Rate' =
+			
+			DIVIDE(COUNT(AdventureWorks_Sales_2015[OrderNumber]), DISTINCTCOUNT(AdventureWorks_Sales_2015[OrderNumber]))
+		lineageTag: d9f630e5-5f01-41aa-acae-c8fb3ab8d472
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OrderDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ed1c15af-c419-44bb-83c5-91bbeff67a25
+		summarizeBy: none
+		sourceColumn: OrderDate
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column StockDate
+		dataType: string
+		lineageTag: 45ff6ea6-7164-4a69-8987-0d435c4504bc
+		summarizeBy: none
+		sourceColumn: StockDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderNumber
+		dataType: string
+		lineageTag: a4308b5c-0e29-462a-ad93-6fc0a53a9ec9
+		summarizeBy: none
+		sourceColumn: OrderNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 38fb8946-37e6-443a-9f6d-57334adadfa9
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 60e27c10-dfb5-4d3b-aefe-37fbdf8ffd13
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column TerritoryKey
+		dataType: int64
+		formatString: 0
+		lineageTag: a5702141-06c6-4744-aac4-3a74eee424f1
+		summarizeBy: count
+		sourceColumn: TerritoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderLineItem
+		dataType: int64
+		formatString: 0
+		lineageTag: 257d5d7a-a084-4003-ae6b-9d09ead26193
+		summarizeBy: sum
+		sourceColumn: OrderLineItem
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderQuantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 4f906603-0475-4a0c-9fa3-6e655056497f
+		summarizeBy: sum
+		sourceColumn: OrderQuantity
+
+		annotation SummarizationSetBy = Automatic
+
+	partition AdventureWorks_Sales_2015 = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents("https://techstarconsultinginc.sharepoint.com/sites/HirotecMexico/Shared Documents/Hirotec - PowerBI Governance Project/Deliverables/Style Guide Dataset/AdventureWorks_Sales_2015.csv"),[Delimiter=",", Columns=8, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"OrderDate", type text}, {"StockDate", type text}, {"OrderNumber", type text}, {"ProductKey", Int64.Type}, {"CustomerKey", Int64.Type}, {"TerritoryKey", Int64.Type}, {"OrderLineItem", Int64.Type}, {"OrderQuantity", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

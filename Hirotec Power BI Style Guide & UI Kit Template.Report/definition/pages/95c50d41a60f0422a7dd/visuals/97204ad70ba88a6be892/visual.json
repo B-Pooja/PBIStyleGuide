@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "97204ad70ba88a6be892",
+  "position": {
+    "x": 26.315789473684212,
+    "y": 663.1578947368422,
+    "z": 0,
+    "height": 585.96491228070181,
+    "width": 1228.0701754385968,
+    "tabOrder": 7000
+  },
+  "visualGroup": {
+    "displayName": "Blue Background ",
+    "groupMode": "ScaleMode"
+  }
+}

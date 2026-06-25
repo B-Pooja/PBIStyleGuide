@@ -1,0 +1,41 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "61a99dc03e0b44ca7153",
+  "position": {
+    "x": 9.4840516851902,
+    "y": 37.010933405620271,
+    "z": 1000,
+    "height": 46.957621758380775,
+    "width": 576.44528779253642,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Copy Paste Friendly"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": " ................................................................................................................................................................................................"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "420da1d1cca6d53c7fe2"
+}

@@ -1,0 +1,35 @@
+model Model
+	culture: en-IN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["AdventureWorks_Customers","AdventureWorks_Product_Categories","AdventureWorks_Product_Subcategories","AdventureWorks_Products","AdventureWorks_Returns","AdventureWorks_Sales_2015","Orders","Returns","People","Date Last Refreshed"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table AdventureWorks_Customers
+ref table AdventureWorks_Product_Categories
+ref table AdventureWorks_Product_Subcategories
+ref table AdventureWorks_Products
+ref table AdventureWorks_Returns
+ref table AdventureWorks_Sales_2015
+ref table DateTableTemplate_1fb73215-c764-4137-adfe-8e9bd71811f9
+ref table Calendar
+ref table Orders
+ref table LocalDateTable_ab9d70fe-43c1-4b0e-86ae-2b2b3e791604
+ref table Returns
+ref table People
+ref table 'KPI Definitions'
+ref table LocalDateTable_852536b7-c274-4530-8148-23d7e91c4ce3
+ref table LocalDateTable_4942c080-7051-451a-a6a3-a5524b4716ae
+ref table 'Test Info'
+ref table 'Date Last Refreshed'
+ref table LocalDateTable_547be5d9-9d1a-4908-b980-1f1349184809
+
+ref cultureInfo en-IN
+

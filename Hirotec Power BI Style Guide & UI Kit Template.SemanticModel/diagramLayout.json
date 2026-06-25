@@ -1,0 +1,189 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "AdventureWorks_Customers",
+          "nodeLineageTag": "e480ecc3-dbc6-44a0-af13-8a5db69f2e75",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 284,
+            "y": 86
+          },
+          "nodeIndex": "AdventureWorks_Product_Categories",
+          "nodeLineageTag": "f16c556b-9958-4f41-b205-4b7f1871f1ea",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 568,
+            "y": 74
+          },
+          "nodeIndex": "AdventureWorks_Product_Subcategories",
+          "nodeLineageTag": "66e059c7-6c4f-4d5c-87ef-b4bdd0b1bc40",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 852,
+            "y": 0
+          },
+          "nodeIndex": "AdventureWorks_Products",
+          "nodeLineageTag": "15c9401a-efcc-4f2e-ac49-aedf27f58623",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 1138.0547945205481,
+            "y": 0
+          },
+          "nodeIndex": "AdventureWorks_Returns",
+          "nodeLineageTag": "a70a939a-9589-431d-aa13-100092af6510",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 1382.86301369863,
+            "y": 0
+          },
+          "nodeIndex": "AdventureWorks_Sales_2015",
+          "nodeLineageTag": "d4fab313-0e2d-473c-8513-e5c8bc86c5a4",
+          "size": {
+            "height": 398,
+            "width": 234
+          },
+          "zIndex": 11
+        },
+        {
+          "location": {
+            "x": 1667.5205479452056,
+            "y": 0
+          },
+          "nodeIndex": "Calendar",
+          "nodeLineageTag": "d83a7a5f-b89c-4b8e-990c-d2b3c402583c",
+          "size": {
+            "height": 329,
+            "width": 202
+          },
+          "zIndex": 12
+        },
+        {
+          "location": {
+            "x": 1880.4794520547946,
+            "y": 0
+          },
+          "nodeIndex": "Orders",
+          "nodeLineageTag": "3bc2f5f0-385b-4c16-be85-e098c0fef621",
+          "size": {
+            "height": 565.5,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 2146.8493150684931,
+            "y": 295.89041095890411
+          },
+          "nodeIndex": "Returns",
+          "nodeLineageTag": "b988f2eb-ef7f-4775-b1f5-c72041a5407b",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 1628.1597766614939,
+            "y": 388.07876712328761
+          },
+          "nodeIndex": "People",
+          "nodeLineageTag": "a860d938-c72f-4e85-bc72-5595211cfd9b",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 1120.4748451546448,
+            "y": 216.99657534246575
+          },
+          "nodeIndex": "BlinkIT Grocery Data",
+          "nodeLineageTag": "f772b17f-a621-48a2-a5c0-1530fca7918a",
+          "size": {
+            "height": 433.56164383561634,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 2430.8493150684931,
+            "y": 225.279109589041
+          },
+          "nodeIndex": "Test Info",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2141.7077218669733,
+            "y": 5.1369863013698627
+          },
+          "nodeIndex": "KPI Definitions",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 97.333333333333343,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

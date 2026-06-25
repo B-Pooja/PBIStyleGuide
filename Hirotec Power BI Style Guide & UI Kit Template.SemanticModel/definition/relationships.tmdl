@@ -1,0 +1,54 @@
+relationship AutoDetected_de877aaf-d3dd-41e3-aa8f-93e04aee1e84
+	fromColumn: AdventureWorks_Product_Subcategories.ProductCategoryKey
+	toColumn: AdventureWorks_Product_Categories.ProductCategoryKey
+
+relationship AutoDetected_cb23116f-2d2b-4752-b78d-f5ff457a853c
+	fromColumn: AdventureWorks_Products.ProductSubcategoryKey
+	toColumn: AdventureWorks_Product_Subcategories.ProductSubcategoryKey
+
+relationship AutoDetected_2758dcb3-d41e-4fd5-a492-536affb76deb
+	fromColumn: AdventureWorks_Returns.ProductKey
+	toColumn: AdventureWorks_Products.ProductKey
+
+relationship AutoDetected_031d96f1-edf2-4c60-9482-62cd29097357
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: AdventureWorks_Sales_2015.CustomerKey
+	toColumn: AdventureWorks_Customers.CustomerKey
+
+relationship AutoDetected_04cb3c90-62e4-4e17-a8a8-5648b0ce3ce9
+	fromColumn: AdventureWorks_Sales_2015.ProductKey
+	toColumn: AdventureWorks_Products.ProductKey
+
+relationship 6e4e6595-055f-431a-a792-015f3c1687c0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Orders.'Ship Date'
+	toColumn: LocalDateTable_ab9d70fe-43c1-4b0e-86ae-2b2b3e791604.Date
+
+relationship f6090377-0258-4fde-b56d-ae399d31ea6e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendar.Date
+	toColumn: LocalDateTable_852536b7-c274-4530-8148-23d7e91c4ce3.Date
+
+relationship 2fe288bf-36f5-4a6c-838a-9f149bfdf33c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendar.Datekey
+	toColumn: LocalDateTable_4942c080-7051-451a-a6a3-a5524b4716ae.Date
+
+relationship f8ade691-e044-47bd-5333-8910cda7f0fe
+	fromColumn: AdventureWorks_Sales_2015.OrderDate
+	toColumn: Calendar.Datekey
+
+relationship 6597562b-3469-448c-ee70-2bc7f5f49fa8
+	fromColumn: Orders.'Order Date'
+	toColumn: Calendar.Datekey
+
+relationship 4edb47e2-0051-4311-91f6-a182c68515ae
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Date Last Refreshed'.'Date Last Refreshed'
+	toColumn: LocalDateTable_547be5d9-9d1a-4908-b980-1f1349184809.Date
+
+relationship AutoDetected_d944c83b-9c29-4924-b4be-a7bd38204793
+	fromColumn: Orders.Region
+	toColumn: People.Region
+

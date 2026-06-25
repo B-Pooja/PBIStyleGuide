@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "550a9a7452726b7c2ff1",
+  "position": {
+    "x": 25,
+    "y": 611.25,
+    "z": 2000,
+    "height": 96.166338859671328,
+    "width": 525,
+    "tabOrder": 6000
+  },
+  "visualGroup": {
+    "displayName": "Button and slicer",
+    "groupMode": "ScaleMode"
+  }
+}

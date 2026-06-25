@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "6d730210d601c30dd14c",
+  "position": {
+    "x": 17.108888844085595,
+    "y": 84.712331789303192,
+    "z": 5000,
+    "height": 135,
+    "width": 225,
+    "tabOrder": 3000
+  },
+  "visualGroup": {
+    "displayName": "Dropdown Slicer 1",
+    "groupMode": "ScaleMode"
+  }
+}

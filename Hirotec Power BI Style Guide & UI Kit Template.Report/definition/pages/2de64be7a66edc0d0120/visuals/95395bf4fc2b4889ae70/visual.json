@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "95395bf4fc2b4889ae70",
+  "position": {
+    "x": 6.5269964299550409,
+    "y": 5.2071233435034818,
+    "z": 9000,
+    "height": 93.915243516761549,
+    "width": 380.51865907653388,
+    "tabOrder": 2015
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Transparent logo for light background With Border and Inside Shadow",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "10.5pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Copy paste friendly"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ".............................................................................................................................."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "41c98551663645616e61"
+}

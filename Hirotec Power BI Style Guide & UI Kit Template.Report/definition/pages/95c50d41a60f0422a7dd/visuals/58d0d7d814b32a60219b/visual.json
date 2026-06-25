@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "58d0d7d814b32a60219b",
+  "position": {
+    "x": 682.45614035087726,
+    "y": 1368.421052631579,
+    "z": 4000,
+    "height": 77.192982456140356,
+    "width": 531.57894736842115,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "https://youtu.be/jqpFw9YfWxk?si=bIHkG_SDgL7-0Wjc",
+                    "textStyle": {
+                      "fontFamily": "Arial",
+                      "fontSize": "18pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

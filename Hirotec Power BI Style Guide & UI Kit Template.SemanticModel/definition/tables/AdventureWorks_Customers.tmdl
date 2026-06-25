@@ -1,0 +1,132 @@
+table AdventureWorks_Customers
+	lineageTag: e480ecc3-dbc6-44a0-af13-8a5db69f2e75
+
+	/// Calculates the average annual income of customers based on available data.
+	measure 'Average Income' = AVERAGE(AdventureWorks_Customers[AnnualIncome])
+		formatString: 0
+		lineageTag: fe43b2db-8968-4329-8bfd-8c23a5cb653e
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		lineageTag: c061507d-a45b-44fd-8b10-2139b34c4ccd
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Prefix
+		dataType: string
+		lineageTag: efd1e052-6820-4d34-95cf-224d8d1ca748
+		summarizeBy: none
+		sourceColumn: Prefix
+
+		annotation SummarizationSetBy = Automatic
+
+	column FirstName
+		dataType: string
+		lineageTag: 5a7df343-9479-4021-871a-2b1ccba26ef4
+		summarizeBy: none
+		sourceColumn: FirstName
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastName
+		dataType: string
+		lineageTag: db6f6eb0-374c-4cda-824c-0a367a0f37ba
+		summarizeBy: none
+		sourceColumn: LastName
+
+		annotation SummarizationSetBy = Automatic
+
+	column BirthDate
+		dataType: string
+		lineageTag: a4104360-e234-4556-98fb-b86f9ce4f4bb
+		summarizeBy: none
+		sourceColumn: BirthDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column MaritalStatus
+		dataType: string
+		lineageTag: d95b36b3-eb85-4a49-a8d8-279247cfd466
+		summarizeBy: none
+		sourceColumn: MaritalStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: 1ef7865c-4843-4638-aee5-153c658411d9
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmailAddress
+		dataType: string
+		lineageTag: ffc7e3e0-47c3-4a10-93e6-9977dfd3fa22
+		summarizeBy: none
+		sourceColumn: EmailAddress
+
+		annotation SummarizationSetBy = Automatic
+
+	column AnnualIncome
+		dataType: int64
+		formatString: 0
+		lineageTag: ca1e3995-c6f1-4c16-aee6-71256c854350
+		summarizeBy: sum
+		sourceColumn: AnnualIncome
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalChildren
+		dataType: int64
+		formatString: 0
+		lineageTag: b5a23f9a-b9e3-49fb-ae3e-a139cd0f166b
+		summarizeBy: sum
+		sourceColumn: TotalChildren
+
+		annotation SummarizationSetBy = Automatic
+
+	column EducationLevel
+		dataType: string
+		lineageTag: d1ffae5a-a177-453a-9d98-a2c0ae413cdb
+		summarizeBy: none
+		sourceColumn: EducationLevel
+
+		annotation SummarizationSetBy = Automatic
+
+	column Occupation
+		dataType: string
+		lineageTag: 83a14061-3203-4b5b-8c82-f4562ccc0a53
+		summarizeBy: none
+		sourceColumn: Occupation
+
+		annotation SummarizationSetBy = Automatic
+
+	column HomeOwner
+		dataType: string
+		lineageTag: 1554313c-add6-4187-80ae-105682fb94ca
+		summarizeBy: none
+		sourceColumn: HomeOwner
+
+		annotation SummarizationSetBy = Automatic
+
+	partition AdventureWorks_Customers = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents("https://techstarconsultinginc.sharepoint.com/sites/HirotecMexico/Shared Documents/Hirotec - PowerBI Governance Project/Deliverables/Style Guide Dataset/AdventureWorks_Customers.csv"),[Delimiter=",", Columns=13, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"CustomerKey", Int64.Type}, {"Prefix", type text}, {"FirstName", type text}, {"LastName", type text}, {"BirthDate", type text}, {"MaritalStatus", type text}, {"Gender", type text}, {"EmailAddress", type text}, {"AnnualIncome", type text}, {"TotalChildren", Int64.Type}, {"EducationLevel", type text}, {"Occupation", type text}, {"HomeOwner", type text}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type","$","",Replacer.ReplaceText,{"AnnualIncome"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value",",","",Replacer.ReplaceText,{"AnnualIncome"}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Replaced Value1",{{"AnnualIncome", Int64.Type}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+
